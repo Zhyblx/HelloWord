@@ -1,18 +1,20 @@
 package helloenum;
 
-public enum HelloEnum {
+public enum HelloEnum{
 
-    Hello("Hello"), Word("Word");
+    Hello("Hello"),
+    Word("Word");
 
-    private String s = null;
+    private String strName="";
 
-    HelloEnum(String s) {
-        this.s = s;
+    // 枚举值的构造方法必须试用关键字 private 进行定义
+    private HelloEnum(String strName) {
+        // TODO Auto-generated constructor stub
+        this.strName=strName;
     }
 
-    public String getS() {
-        return this.s;
+    public String getEnumName() {
+        return this.strName;
     }
 
 }
-
