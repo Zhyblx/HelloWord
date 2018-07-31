@@ -1,7 +1,7 @@
-package helloary;
+package src.helloary;
 
-import helloabstract.HelloAbstract;
-import hellointerface.HelloInterface;
+import src.helloabstract.HelloAbstract;
+import src.hellointerface.HelloInterface;
 
 public final class HelloAry<T extends String> {
 

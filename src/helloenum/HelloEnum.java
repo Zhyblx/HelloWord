@@ -1,4 +1,4 @@
-package helloenum;
+package src.helloenum;
 
 public enum HelloEnum{
 

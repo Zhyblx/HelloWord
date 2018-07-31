@@ -1,7 +1,7 @@
-package helloabstract;
+package src.helloabstract;
 
 
-import hellointerface.HelloInterface;
+import src.hellointerface.HelloInterface;
 
 import java.lang.Class;
 import java.lang.reflect.Constructor;
