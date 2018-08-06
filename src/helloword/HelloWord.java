@@ -4,6 +4,7 @@ import src.helloabstract.HelloAbstract;
 import src.helloary.HelloAry;
 import src.helloenum.HelloEnum;
 import src.hellointerface.HelloInterface;
+import src.hellolog.HelloLog;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -95,7 +96,7 @@ class HelloRunnable extends HelloExtends implements Runnable {
         iterator = list.iterator();
         while (iterator.hasNext()) {
             String str = iterator.next();
-            System.out.println(str);
+            HelloLog.getLog(str);
         }
     }
 
