@@ -17,6 +17,8 @@ import java.lang.reflect.Constructor;
 import java.lang.Class;
 import java.util.logging.Logger;
 
+import java.lang.Math;
+
 class HelloExtends extends HelloAbstract implements HelloInterface<String> {
 
     public HelloExtends(String Name) {
@@ -51,10 +53,10 @@ class HelloExtends extends HelloAbstract implements HelloInterface<String> {
     @Override
     public String getListRun(int x) {
         try {
-            if (x < 328) {
-                stringBUffer.append("min");
-            } else {
+            if (x > 50) {
                 stringBUffer.append("max");
+            } else {
+                stringBUffer.append("min");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -104,8 +106,12 @@ class HelloRunnable extends HelloExtends implements Runnable {
     public void run() {
         try {
 
+            int intx=(int) (Math.random()*100);
+
+            System.out.println("随机数是:"+intx);
+
             String strName[] = new String[3];
-            strName[0] = super.getListRun(32);
+            strName[0] = super.getListRun(intx);
             strName[1] = String.valueOf(super.getListRun(4 , 3));
             strName[2] = String.valueOf(super.getListRun(5 , 6 , 7));
 
@@ -123,13 +129,13 @@ class HelloRunnable extends HelloExtends implements Runnable {
 }
 
 
-public class HelloWord extends TimerTask {
+public class HelloWord {
 
-    private Class<Object> myClass = null;
-    private Constructor<Object> myConstructor = null;
-    private HelloRunnable helloRunnable = null;
-    private HelloAbstract helloAbstract = null;
-    private HelloAry<String> helloAry = null;
+    private static Class<Object> myClass = null;
+    private static Constructor<Object> myConstructor = null;
+    private static HelloRunnable helloRunnable = null;
+    private static HelloAbstract helloAbstract = null;
+    private static HelloAry<String> helloAry = null;
 
     private static HelloWord helloWord = new HelloWord();
     private static Timer timer = new Timer();
@@ -139,41 +145,45 @@ public class HelloWord extends TimerTask {
      * 方法：info() ；作用打印出日志信息
      *
      */
-    private Logger logger= Logger.getLogger("helloabstract.HelloAbstract");
+    private static Logger logger= Logger.getLogger("helloabstract.HelloAbstract");
 
-    @Override
-    public void run() {
-        try {
+    private static TimerTask timerTask=new TimerTask() {
+        @Override
+        public void run() {
+            try {
 
-            myClass = (Class<Object>) Class.forName("src.helloword.HelloRunnable");
-            myConstructor = (Constructor<Object>) myClass.getConstructor(String.class);
+                myClass = (Class<Object>) Class.forName("src.helloword.HelloRunnable");
+                myConstructor = (Constructor<Object>) myClass.getConstructor(String.class);
 
-            helloRunnable = (HelloRunnable) myConstructor.newInstance(HelloEnum.Hello.getEnumName() + HelloEnum.Word.getEnumName());
-            helloRunnable.getAbstractRun();
-            new Thread(helloRunnable).start();
+                helloRunnable = (HelloRunnable) myConstructor.newInstance(HelloEnum.Hello.getEnumName() + HelloEnum.Word.getEnumName());
+                helloRunnable.getAbstractRun();
+                new Thread(helloRunnable).start();
 
-            helloAbstract = (HelloRunnable) myConstructor.newInstance(HelloInterface.STRING[2]);
-            helloAbstract.getNeiBuLeiRun();
-            System.out.println(helloAbstract.getName());
-            logger.info(helloAbstract.getName());
+                helloAbstract = (HelloRunnable) myConstructor.newInstance(HelloInterface.STRING[2]);
+                helloAbstract.getNeiBuLeiRun();
+                System.out.println(helloAbstract.getName());
+                logger.info(helloAbstract.getName());
 
 
-            myClass = (Class<Object>) Class.forName("src.helloary.HelloAry");
-            myConstructor = (Constructor<Object>) myClass.getConstructor(String.class);
+                myClass = (Class<Object>) Class.forName("src.helloary.HelloAry");
+                myConstructor = (Constructor<Object>) myClass.getConstructor(String.class);
 
-            helloAry = (HelloAry<String>) myConstructor.newInstance(HelloInterface.STRING[3]);
-            helloAry.getAryRun();
+                helloAry = (HelloAry<String>) myConstructor.newInstance(HelloInterface.STRING[3]);
+                helloAry.getAryRun();
 
-            timer.cancel();
+                timer.cancel();
 
-        } catch (Exception e) {
-            e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
-    }
+    };
+
+
 
     public static void main(String[] args) {
         try {
-            timer.schedule(helloWord , 1000);
+            timer.schedule(timerTask , 1000);
         } catch (Exception e) {
             e.printStackTrace();
         }
