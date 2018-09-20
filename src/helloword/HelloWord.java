@@ -171,7 +171,7 @@ public class HelloWord {
 //                helloAry = (HelloAry<String>) myConstructor.newInstance(HelloInterface.STRING[3]);
 //                helloAry.getAryRun();
 
-                // 因为范型类HelloAry的构造函数使用关键字protected定义(非public定义)，所以实现上需要继承调用,不能用new调用
+                // 因为范型类HelloAry的构造函数使用关键字protected定义(非public定义)，所以实现上需要继承调用
 //                helloAry=new HelloAry<String>(HelloInterface.STRING[3]);
 
                 helloAry=new HelloAry<>(HelloInterface.STRING[3]){

@@ -144,3 +144,41 @@ b)为参数指定数据类型下限，即使用关键字super，在实现的过�
 
 8、计时器：Timer 和 TimerTask 必须配合使用。
 
+#### 继承调用原理：
+1.概念说明：<br>
+public修饰符来修饰的函数(或构造函数)，是指这个函数可以被其他的类来调用，也可以被自己类里的函数来调用<br>
+protected修饰符来修饰的函数(或构造函数)，是指这个函数可以被继承类调用，也可以被自己类里的函数调用，但不能被其他的类调用。<br>
+private修饰符来修饰的函数，就具有更少的权限了，只能被自己类里的其他函数调用，其他的一概不能调用。<br>
+
+
+2.实现方式：<br>
+
+    public class HelloAry<T extends String> {
+            protected HelloAry(T Ary) {
+                try {
+                    this.setAry(Ary);
+                    HelloAbstract.getGzRun(HelloInterface.STRING[0] + "2");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+    }
+    说明：以上类的构造方法定义使用protected关键字字修饰
+    
+    继承类调用的实现方式：
+    public class HelloWord {
+        private static void main(String[] args){
+            HelloAry helloAry=new HelloAry<>(HelloInterface.STRING[3]){
+                      public String getAryName(){
+                                    return "你好，世界";
+                      }
+            };
+            helloAry.getAryRun();
+            HelloLog.getLog(helloAry.getAryName());
+        }
+    }
+
+
+
+
+
