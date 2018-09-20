@@ -165,11 +165,22 @@ public class HelloWord {
                 logger.info(helloAbstract.getName());
 
 
-                myClass = (Class<Object>) Class.forName("src.helloary.HelloAry");
-                myConstructor = (Constructor<Object>) myClass.getConstructor(String.class);
+//                myClass = (Class<Object>) Class.forName("src.helloary.HelloAry");
+//                myConstructor = (Constructor<Object>) myClass.getConstructor(String.class);
 
-                helloAry = (HelloAry<String>) myConstructor.newInstance(HelloInterface.STRING[3]);
+//                helloAry = (HelloAry<String>) myConstructor.newInstance(HelloInterface.STRING[3]);
+//                helloAry.getAryRun();
+
+                // 因为范型类HelloAry的构造函数使用关键字protected定义(非public定义)，所以实现上需要继承调用,不能用new调用
+//                helloAry=new HelloAry<String>(HelloInterface.STRING[3]);
+
+                helloAry=new HelloAry<>(HelloInterface.STRING[3]){
+                    public String getAryName(){
+                        return "你好，世界";
+                    }
+                };
                 helloAry.getAryRun();
+                HelloLog.getLog(helloAry.getAryName());
 
                 timer.cancel();
 
