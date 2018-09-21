@@ -65,15 +65,15 @@ class HelloExtends extends HelloAbstract implements HelloInterface<String> {
     }
 
     @Override
-    public int getListRun(int x , int y) {
+    public String getListRun(int x , int y) {
         sum_1 = x + y;
-        return (int) sum_1;
+        return String.valueOf((int) sum_1);
     }
 
     @Override
-    public double getListRun(double a , double b , double c) {
+    public String getListRun(double a , double b , double c) {
         sum_2 = a + b - c;
-        return (double) sum_2;
+        return String.valueOf((double) sum_2);
     }
 
 }

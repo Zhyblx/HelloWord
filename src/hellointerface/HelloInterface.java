@@ -11,10 +11,10 @@ public interface HelloInterface<E> {
 
     public abstract List<E> getListRun();
 
-    public abstract String getListRun(int x);
+    public abstract E getListRun(int x);
 
-    public abstract int getListRun(int x, int y);
+    public abstract E getListRun(int x , int y);
 
-    public abstract double getListRun(double a, double b, double c);
+    public abstract E getListRun(double a , double b , double c);
 
 }
