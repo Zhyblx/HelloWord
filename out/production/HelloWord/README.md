@@ -13,9 +13,9 @@ HelloInterface接口说明：<br>
 3、在同一个类中方法名相同，但参数"个数"或参数"数据类型"不同称之为方法重载。例如：<br>
 
     public abstract List<E> getListRun();
-    public abstract String getListRun(int x);
-    public abstract int getListRun(int x, int y);
-    public abstract double getListRun(double a, double b, double c);
+    public abstract E getListRun(int x);
+    public abstract E getListRun(int x , int y);
+    public abstract E getListRun(double a , double b , double c);
 
 #### 二、抽象类的定义：
 定义：包含抽象方法的类必须是抽象类，定义关键词abstract。<br>

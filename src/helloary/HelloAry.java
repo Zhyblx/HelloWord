@@ -8,14 +8,14 @@ import src.hellointerface.HelloInterface;
 //public final class HelloAry<T extends String> {
 
 public class HelloAry<T extends String> {
-    private T Ary = null;
+    private T ary = null;
 
-    private void setAry(T Ary) {
-        this.Ary = Ary;
+    private void setAry(T ary) {
+        this.ary = ary;
     }
 
     private T getAry() {
-        return this.Ary;
+        return this.ary;
     }
 
     /*
@@ -35,9 +35,9 @@ public class HelloAry<T extends String> {
 //        }
 //    }
 
-    protected HelloAry(T Ary) {
+    protected HelloAry(T ary) {
         try {
-            this.setAry(Ary);
+            this.setAry(ary);
             HelloAbstract.getGzRun(HelloInterface.STRING[0] + "2");
         } catch (Exception e) {
             e.printStackTrace();
@@ -52,7 +52,7 @@ public class HelloAry<T extends String> {
         }
     }
 
-    public String getAryName(){
+    public String getAryName() {
         return null;
     }
 

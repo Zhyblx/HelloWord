@@ -2,41 +2,41 @@ package src.helloabstract;
 
 
 import src.hellointerface.HelloInterface;
+import src.hellolog.HelloLog;
 
 import java.lang.Class;
 import java.lang.reflect.Constructor;
 
 public abstract class HelloAbstract {
 
-    private String Name = null;
+    private String name = null;
 
-    public final void setName(String Name) {
-        this.Name = Name;
+    public final void setName(String name) {
+        this.name = name;
     }
 
     public final String getName() {
-        return this.Name;
+        return this.name;
     }
 
-    public static final void getGzRun(String str_Gz) throws Exception {
-        System.out.println(str_Gz);
+    public static final void getGzRun(String strGz) throws Exception {
+        HelloLog.getLog(strGz);
     }
 
-    public static final void getCxRun(String str_Cx) throws Exception {
-        System.out.println(str_Cx);
+    public static final void getCxRun(String strCx) throws Exception {
+        HelloLog.getLog(strCx);
     }
 
-    final class NeiBuLei {
+    private abstract class HelloNeiBu {
 
-        private String str = "";
+        // 继承调用
+        protected String str = "";
 
-        public NeiBuLei(String str) {
+        protected HelloNeiBu(String str) {
             this.str = str;
         }
 
-        public void getNeiBuLei() throws Exception {
-            System.out.println(this.str);
-        }
+        public abstract String getNeiBuLei();
 
     }
 
@@ -47,14 +47,21 @@ public abstract class HelloAbstract {
 //        HelloAbstract.NeiBuLei neiBuLei = (HelloAbstract.NeiBuLei) myClassConstructor.newInstance(HelloInterface.STRING[4]);
 //        neiBuLei.getNeiBuLei();
 //
-        new NeiBuLei(HelloInterface.STRING[4]).getNeiBuLei();
+        HelloNeiBu helloNeiBu = new HelloNeiBu(HelloInterface.STRING[4]) {
+            @Override
+            public String getNeiBuLei() {
+                return this.str;
+            }
+        };
+
+        System.out.println(helloNeiBu.getNeiBuLei());
 
     }
 
-    public HelloAbstract(String Name) {
+    public HelloAbstract(String name) {
         try {
 
-            this.setName(Name);
+            this.setName(name);
             HelloAbstract.getGzRun(HelloInterface.STRING[0] + "1");
 
         } catch (Exception e) {
