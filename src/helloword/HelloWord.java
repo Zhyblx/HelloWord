@@ -36,7 +36,7 @@ class HelloExtends extends HelloAbstract implements HelloInterface<String> {
     }
 
     private List<String> list = new ArrayList<String>();
-    private StringBuffer stringBUffer = new StringBuffer();
+    private StringBuffer stringBuffer = new StringBuffer();
     private Integer sum1 = 0;
     private Double sum2 = 0.0;
 
@@ -52,16 +52,48 @@ class HelloExtends extends HelloAbstract implements HelloInterface<String> {
 
     @Override
     public String getListRun(int x) {
+//        try {
+//            if (x >= 0 && x < 60) {
+//                stringBuffer.append("差");
+//            } else if (x >= 60 && x < 75) {
+//                stringBuffer.append("中");
+//            } else if (x >= 75 && x < 85) {
+//                stringBuffer.append("良");
+//            } else {
+//                stringBuffer.append("优");
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+
+        // 在条件表达式中不允许有赋值操作，同时也不允许出现复杂的逻辑表达式；(如上代码)
+        // 解决方案：将复杂的逻辑运算赋值给一个具体有含义的布尔变量；(如下代码)
+
+        boolean worst = (x >= 0 && x < 60);//差
+        boolean secondary = (x >= 60 && x < 75);//中
+        boolean good = (x >= 75 && x < 85);//良
+        boolean excellent = (x >= 85 && x <= 100);//优
+
+        System.out.println(worst);
+        System.out.println(secondary);
+        System.out.println(good);
+        System.out.println(excellent);
+
         try {
-            if (x > 50) {
-                stringBUffer.append("max");
-            } else {
-                stringBUffer.append("min");
+            if (worst) {
+                stringBuffer.append("差");
+            } else if (secondary) {
+                stringBuffer.append("中");
+            } else if (good) {
+                stringBuffer.append("良");
+            } else if (excellent) {
+                stringBuffer.append("优");
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return stringBUffer.toString();
+
+        return stringBuffer.toString();
     }
 
     @Override
@@ -155,7 +187,6 @@ public class HelloWord {
                 helloAbstract = (HelloRunnable) myConstructor.newInstance(HelloInterface.STRING[2]);
                 helloAbstract.getNeiBuLeiRun();
                 System.out.println(helloAbstract.getName());
-
 
 
 //                myClass = (Class<Object>) Class.forName("src.helloary.HelloAry");
