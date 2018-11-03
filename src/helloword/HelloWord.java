@@ -81,13 +81,13 @@ class HelloExtends extends HelloAbstract implements HelloInterface<String> {
 
         try {
             if (worst) {
-                stringBuffer.append("差");
+                stringBuffer.append(HelloEnum.差.getEnumName());
             } else if (secondary) {
-                stringBuffer.append("中");
+                stringBuffer.append(HelloEnum.中.getEnumName());
             } else if (good) {
-                stringBuffer.append("良");
+                stringBuffer.append(HelloEnum.良.getEnumName());
             } else if (excellent) {
-                stringBuffer.append("优");
+                stringBuffer.append(HelloEnum.优.getEnumName());
             }
         } catch (Exception e) {
             e.printStackTrace();
