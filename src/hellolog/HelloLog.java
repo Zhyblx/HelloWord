@@ -14,6 +14,7 @@ public final class HelloLog {
 
     public static void getLog(String msg) {
         logger.info(msg);
+
     }
 
 }

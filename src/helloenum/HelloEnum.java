@@ -15,10 +15,12 @@ public enum HelloEnum {
     private HelloEnum(String strName) {
         // TODO Auto-generated constructor stub
         this.strName = strName;
+
     }
 
     public String getEnumName() {
         return this.strName;
+
     }
 
 }

@@ -12,10 +12,12 @@ public class HelloAry<T extends String> {
 
     private void setAry(T ary) {
         this.ary = ary;
+
     }
 
     private T getAry() {
         return this.ary;
+
     }
 
     /*
@@ -36,24 +38,29 @@ public class HelloAry<T extends String> {
 //    }
 
     protected HelloAry(T ary) {
+        this.setAry(ary);
         try {
-            this.setAry(ary);
             HelloAbstract.getGzRun(HelloInterface.STRING[0] + "2");
+
         } catch (Exception e) {
             e.printStackTrace();
+
         }
     }
 
     public void getAryRun() {
         try {
             System.out.println(this.getAry());
+
         } catch (Exception e) {
             e.printStackTrace();
+
         }
     }
 
     public String getAryName() {
         return null;
+
     }
 
 }

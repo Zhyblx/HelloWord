@@ -13,18 +13,22 @@ public abstract class HelloAbstract {
 
     public final void setName(String name) {
         this.name = name;
+
     }
 
     public final String getName() {
         return this.name;
+
     }
 
     public static final void getGzRun(String strGz) throws Exception {
         HelloLog.getLog(strGz);
+
     }
 
     public static final void getCxRun(String strCx) throws Exception {
         HelloLog.getLog(strCx);
+
     }
 
     private abstract class HelloNeiBu {
@@ -34,6 +38,7 @@ public abstract class HelloAbstract {
 
         protected HelloNeiBu(String str) {
             this.str = str;
+
         }
 
         public abstract String getNeiBuLei();
@@ -59,13 +64,13 @@ public abstract class HelloAbstract {
     }
 
     public HelloAbstract(String name) {
+        this.setName(name);
         try {
-
-            this.setName(name);
             HelloAbstract.getGzRun(HelloInterface.STRING[0] + "1");
 
         } catch (Exception e) {
             e.printStackTrace();
+
         }
     }
 

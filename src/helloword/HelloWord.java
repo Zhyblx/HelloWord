@@ -23,16 +23,20 @@ class HelloExtends extends HelloAbstract implements HelloInterface<String> {
 
     public HelloExtends(String name) {
         super(name);
+
         try {
             HelloAbstract.getGzRun(HelloInterface.STRING[0] + "3");
+
         } catch (Exception e) {
             e.printStackTrace();
+
         }
     }
 
     @Override
     public void getAbstractRun() throws Exception {
         HelloAbstract.getCxRun(HelloInterface.STRING[1]);
+
     }
 
     private List<String> list = new ArrayList<String>();
@@ -42,12 +46,9 @@ class HelloExtends extends HelloAbstract implements HelloInterface<String> {
 
     @Override
     public List<String> getListRun() {
-        try {
-            list.add(super.getName());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        list.add(super.getName());
         return list;
+
     }
 
     @Override
@@ -82,30 +83,44 @@ class HelloExtends extends HelloAbstract implements HelloInterface<String> {
         try {
             if (worst) {
                 stringBuffer.append(HelloEnum.差.getEnumName());
-            } else if (secondary) {
-                stringBuffer.append(HelloEnum.中.getEnumName());
-            } else if (good) {
-                stringBuffer.append(HelloEnum.良.getEnumName());
-            } else if (excellent) {
-                stringBuffer.append(HelloEnum.优.getEnumName());
+
             }
+
+            if (secondary) {
+                stringBuffer.append(HelloEnum.中.getEnumName());
+
+            }
+
+            if (good) {
+                stringBuffer.append(HelloEnum.良.getEnumName());
+
+            }
+
+            if (excellent) {
+                stringBuffer.append(HelloEnum.优.getEnumName());
+
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
-        }
 
+        }
         return stringBuffer.toString();
+
     }
 
     @Override
     public String getListRun(int x , int y) {
         sum1 = x + y;
         return String.valueOf((int) sum1);
+
     }
 
     @Override
     public String getListRun(double a , double b , double c) {
         sum2 = a + b - c;
         return String.valueOf((double) sum2);
+
     }
 
 }
@@ -114,10 +129,13 @@ class HelloRunnable extends HelloExtends implements Runnable {
 
     public HelloRunnable(String name) {
         super(name);
+
         try {
             HelloAbstract.getGzRun(HelloInterface.STRING[0] + "4");
+
         } catch (Exception e) {
             e.printStackTrace();
+
         }
     }
 
@@ -131,6 +149,7 @@ class HelloRunnable extends HelloExtends implements Runnable {
         while (iterator.hasNext()) {
             String str = iterator.next();
             System.out.println(str);
+
         }
     }
 
@@ -155,6 +174,7 @@ class HelloRunnable extends HelloExtends implements Runnable {
 
         } catch (Exception e) {
             e.printStackTrace();
+
         }
     }
 
@@ -210,6 +230,7 @@ public class HelloWord {
 
             } catch (Exception e) {
                 e.printStackTrace();
+
             }
         }
     };
@@ -218,8 +239,10 @@ public class HelloWord {
     public static void main(String[] args) {
         try {
             timer.schedule(timerTask , 1000);
+
         } catch (Exception e) {
             e.printStackTrace();
+
         }
 
     }
