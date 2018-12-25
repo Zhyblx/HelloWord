@@ -37,16 +37,38 @@ public class HelloAry<T extends String> {
 //        }
 //    }
 
-    protected HelloAry(T ary) {
-        this.setAry(ary);
-        try {
-            HelloAbstract.getGzRun(HelloInterface.STRING[0] + "2");
+//    protected HelloAry(T ary) {
+//        this.setAry(ary);
+//        try {
+//            HelloAbstract.getGzRun(HelloInterface.STRING[0] + "2");
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//
+//        }
+//    }
 
-        } catch (Exception e) {
+    // 私有化构造方法
+    private HelloAry(T ary){
+        this.setAry(ary);
+        try{
+            HelloAbstract.getGzRun(HelloInterface.STRING[0]+"2");
+
+        }catch (Exception e){
             e.printStackTrace();
 
         }
     }
+
+    public static HelloAry<String> helloAry=new HelloAry<String>(HelloInterface.STRING[2]);
+
+    public class HelloAryNeiBu{
+        public void getAryRun() throws Exception {
+            System.out.println(getAry());
+
+        }
+    }
+
 
     public void getAryRun() {
         try {

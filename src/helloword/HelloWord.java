@@ -187,9 +187,9 @@ public class HelloWord {
     private static Constructor<Object> myConstructor = null;
     private static HelloRunnable helloRunnable = null;
     private static HelloAbstract helloAbstract = null;
-    private static HelloAry<String> helloAry = null;
+    private static HelloAry<String> helloAry1 = null;
+    private static HelloAry<String>.HelloAryNeiBu helloAryNeiBu=null;
 
-    private static HelloWord helloWord = new HelloWord();
     private static Timer timer = new Timer();
 
     private static TimerTask timerTask = new TimerTask() {
@@ -218,13 +218,18 @@ public class HelloWord {
                 // 因为范型类HelloAry的构造函数使用关键字protected定义(非public定义)，所以实现上需要继承调用
 //                helloAry=new HelloAry<String>(HelloInterface.STRING[3]);
 
-                helloAry = new HelloAry<>(HelloInterface.STRING[3]) {
-                    public String getAryName() {
-                        return "你好，世界";
-                    }
-                };
-                helloAry.getAryRun();
-                System.out.println(helloAry.getAryName());
+//                helloAry = new HelloAry<>(HelloInterface.STRING[3]) {
+//                    public String getAryName() {
+//                        return "你好，世界";
+//
+//                    }
+//                };
+//                helloAry.getAryRun();
+//                System.out.println(helloAry.getAryName());
+
+                helloAry1=HelloAry.helloAry;
+                helloAryNeiBu=helloAry1.new HelloAryNeiBu();
+                helloAryNeiBu.getAryRun();
 
                 timer.cancel();
 

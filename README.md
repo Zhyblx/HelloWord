@@ -34,7 +34,7 @@ HelloInterface接口说明：<br>
 
 #### 范型类：
 定义：参数化类型，可以处理指定数据类型的类。<br>
-范型类的声明规则：<br>
+a.范型类的声明规则：<br>
 
     public final class HelloAry<T>{}
 说明：<br>
@@ -42,6 +42,20 @@ HelloInterface接口说明：<br>
 2、参数可以指定上限或下限数据类型，例如：<br>
 a)为参数指定数据类型上限，即使用关键字extends，在实现的过程中就只能处理指定数据类型的本身或子类。<br>
 b)为参数指定数据类型下限，即使用关键字super，在实现的过程中就只能处理指定数据类型的本身或父类。<br>
+
+b.私有化构造方法<br>
+    
+    private HelloAry(T ary){
+        
+    }
+说明：<br>
+必须在本类中进行实例化，并且必须使用static定义对象名。如：<br>
+    
+        public static HelloAry<String> helloAry=new HelloAry<String>(HelloInterface.STRING[2]);
+
+对私有化构造类进行实例化的方法：类名 对象名2=类名.对象名1。如：<br>
+
+    HelloAry<String> helloAry1=HelloAry.helloAry;
 
 #### 日志类：
 通过调用类Logger可实现自定义日志(log)的输出。<br>
