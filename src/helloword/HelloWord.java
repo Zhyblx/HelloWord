@@ -4,7 +4,6 @@ import src.helloabstract.HelloAbstract;
 import src.helloary.HelloAry;
 import src.helloenum.HelloEnum;
 import src.hellointerface.HelloInterface;
-import src.hellolog.HelloLog;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -15,8 +14,6 @@ import java.util.TimerTask;
 
 import java.lang.reflect.Constructor;
 import java.lang.Class;
-import java.util.logging.Logger;
-
 import java.lang.Math;
 
 class HelloExtends extends HelloAbstract implements HelloInterface<String> {
@@ -110,14 +107,14 @@ class HelloExtends extends HelloAbstract implements HelloInterface<String> {
     }
 
     @Override
-    public String getListRun(int x , int y) {
+    public String getListRun(int x, int y) {
         sum1 = x + y;
         return String.valueOf((int) sum1);
 
     }
 
     @Override
-    public String getListRun(double a , double b , double c) {
+    public String getListRun(double a, double b, double c) {
         sum2 = a + b - c;
         return String.valueOf((double) sum2);
 
@@ -163,8 +160,8 @@ class HelloRunnable extends HelloExtends implements Runnable {
 
             String[] strName = new String[3];
             strName[0] = super.getListRun(intx);
-            strName[1] = String.valueOf(super.getListRun(4 , 3));
-            strName[2] = String.valueOf(super.getListRun(5 , 6 , 7));
+            strName[1] = String.valueOf(super.getListRun(4, 3));
+            strName[2] = String.valueOf(super.getListRun(5, 6, 7));
 
             for (String str : strName) {
                 System.out.println(str);
@@ -185,13 +182,11 @@ public class HelloWord {
 
     private static Class<Object> myClass = null;
     private static Constructor<Object> myConstructor = null;
+
     private static HelloRunnable helloRunnable = null;
     private static HelloAbstract helloAbstract = null;
-    private static HelloAry<String> helloAry1 = null;
-    private static HelloAry<String>.HelloAryNeiBu helloAryNeiBu=null;
 
     private static Timer timer = new Timer();
-
     private static TimerTask timerTask = new TimerTask() {
         @Override
         public void run() {
@@ -227,9 +222,7 @@ public class HelloWord {
 //                helloAry.getAryRun();
 //                System.out.println(helloAry.getAryName());
 
-                helloAry1=HelloAry.helloAry;
-                helloAryNeiBu=helloAry1.new HelloAryNeiBu();
-                helloAryNeiBu.getAryRun();
+                HelloAry.helloAryNeiBu.getAryRun();
 
                 timer.cancel();
 
@@ -243,7 +236,7 @@ public class HelloWord {
 
     public static void main(String[] args) {
         try {
-            timer.schedule(timerTask , 1000);
+            timer.schedule(timerTask, 1000);
 
         } catch (Exception e) {
             e.printStackTrace();

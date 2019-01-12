@@ -8,6 +8,7 @@ import src.hellointerface.HelloInterface;
 //public final class HelloAry<T extends String> {
 
 public class HelloAry<T extends String> {
+
     private T ary = null;
 
     private void setAry(T ary) {
@@ -49,30 +50,10 @@ public class HelloAry<T extends String> {
 //    }
 
     // 私有化构造方法
-    private HelloAry(T ary){
+    private HelloAry(T ary) {
         this.setAry(ary);
-        try{
-            HelloAbstract.getGzRun(HelloInterface.STRING[0]+"2");
-
-        }catch (Exception e){
-            e.printStackTrace();
-
-        }
-    }
-
-    public static HelloAry<String> helloAry=new HelloAry<String>(HelloInterface.STRING[2]);
-
-    public class HelloAryNeiBu{
-        public void getAryRun() throws Exception {
-            System.out.println(getAry());
-
-        }
-    }
-
-
-    public void getAryRun() {
         try {
-            System.out.println(this.getAry());
+            HelloAbstract.getGzRun(HelloInterface.STRING[0] + "2");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -80,10 +61,17 @@ public class HelloAry<T extends String> {
         }
     }
 
-    public String getAryName() {
-        return null;
+    public class HelloAryNeiBu {
+        public void getAryRun() throws Exception {
+            System.out.println(getAry());
+
+        }
 
     }
+
+    //    private static HelloAry<String> helloAry = new HelloAry<String>(HelloInterface.STRING[2]);
+    public static HelloAry<String>.HelloAryNeiBu helloAryNeiBu = new HelloAry<String>(HelloInterface.STRING[2]).new HelloAryNeiBu();
+
 
 }
 
