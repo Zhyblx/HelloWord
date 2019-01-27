@@ -77,23 +77,24 @@ class HelloExtends extends HelloAbstract implements HelloInterface<String> {
         System.out.println(good);
         System.out.println(excellent);
 
+        // == 符号表示判断左右是否相等；而 = 符号表示负值
         try {
-            if (worst) {
+            if (worst == true) {
                 stringBuffer.append(HelloEnum.差.getEnumName());
 
             }
 
-            if (secondary) {
+            if (secondary == true) {
                 stringBuffer.append(HelloEnum.中.getEnumName());
 
             }
 
-            if (good) {
+            if (good == true) {
                 stringBuffer.append(HelloEnum.良.getEnumName());
 
             }
 
-            if (excellent) {
+            if (excellent == true) {
                 stringBuffer.append(HelloEnum.优.getEnumName());
 
             }
@@ -195,7 +196,8 @@ public class HelloWord {
                 myClass = (Class<Object>) Class.forName("src.helloword.HelloRunnable");
                 myConstructor = (Constructor<Object>) myClass.getConstructor(String.class);
 
-                helloRunnable = (HelloRunnable) myConstructor.newInstance(HelloEnum.Hello.getEnumName() + HelloEnum.Word.getEnumName());
+                helloRunnable = (HelloRunnable) myConstructor
+                        .newInstance(HelloEnum.Hello.getEnumName() + HelloEnum.Word.getEnumName());
                 helloRunnable.getAbstractRun();
                 new Thread(helloRunnable).start();
 

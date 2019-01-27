@@ -70,7 +70,8 @@ public class HelloAry<T extends String> {
     }
 
     //    private static HelloAry<String> helloAry = new HelloAry<String>(HelloInterface.STRING[2]);
-    public static HelloAry<String>.HelloAryNeiBu helloAryNeiBu = new HelloAry<String>(HelloInterface.STRING[2]).new HelloAryNeiBu();
+    public static HelloAry<String>.HelloAryNeiBu helloAryNeiBu =
+            new HelloAry<String>(HelloInterface.STRING[2]).new HelloAryNeiBu();
 
 
 }
