@@ -12,9 +12,13 @@ public final class HelloLog {
 
     private static Logger logger = Logger.getLogger("");
 
-    public static void getLog(String msg) {
-        logger.info(msg);
+    public static void setLogger(Object msg) {
+        logger.info(String.valueOf(msg));
 
     }
 
+    public static void main(String[] args) throws Exception {
+        HelloLog.setLogger("cold,no problem !");
+
+    }
 }

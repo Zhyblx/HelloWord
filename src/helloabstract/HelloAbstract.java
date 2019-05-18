@@ -1,12 +1,9 @@
 package src.helloabstract;
 
-
 import src.hellointerface.HelloInterface;
 import src.hellolog.HelloLog;
 
-import java.lang.Class;
-import java.lang.reflect.Constructor;
-
+// 抽象类使用 abstract 进行定义
 public abstract class HelloAbstract {
 
     private String name = null;
@@ -21,13 +18,13 @@ public abstract class HelloAbstract {
 
     }
 
-    public static final void getGzRun(String strGz) throws Exception {
-        HelloLog.getLog(strGz);
+    public static final void setGzRun(String strGz) throws Exception {
+        HelloLog.setLogger(strGz);
 
     }
 
-    public static final void getCxRun(String strCx) throws Exception {
-        HelloLog.getLog(strCx);
+    public static final void setCxRun(String strCx) throws Exception {
+        HelloLog.setLogger(strCx);
 
     }
 
@@ -56,9 +53,9 @@ public abstract class HelloAbstract {
             @Override
             public String getNeiBuLei() {
                 return this.str;
+
             }
         };
-
         System.out.println(helloNeiBu.getNeiBuLei());
 
     }
@@ -66,7 +63,7 @@ public abstract class HelloAbstract {
     public HelloAbstract(String name) {
         this.setName(name);
         try {
-            HelloAbstract.getGzRun(HelloInterface.STRING[0] + "1");
+            HelloAbstract.setGzRun(HelloInterface.STRING[0] + "1");
 
         } catch (Exception e) {
             e.printStackTrace();

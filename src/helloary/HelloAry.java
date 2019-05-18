@@ -53,7 +53,7 @@ public class HelloAry<T extends String> {
     private HelloAry(T ary) {
         this.setAry(ary);
         try {
-            HelloAbstract.getGzRun(HelloInterface.STRING[0] + "2");
+            HelloAbstract.setGzRun(HelloInterface.STRING[0] + "2");
 
         } catch (Exception e) {
             e.printStackTrace();

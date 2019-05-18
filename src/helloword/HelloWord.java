@@ -22,7 +22,7 @@ class HelloExtends extends HelloAbstract implements HelloInterface<String> {
         super(name);
 
         try {
-            HelloAbstract.getGzRun(HelloInterface.STRING[0] + "3");
+            HelloAbstract.setGzRun(HelloInterface.STRING[0] + "3");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -32,24 +32,27 @@ class HelloExtends extends HelloAbstract implements HelloInterface<String> {
 
     @Override
     public void getAbstractRun() throws Exception {
-        HelloAbstract.getCxRun(HelloInterface.STRING[1]);
+        HelloAbstract.setCxRun(HelloInterface.STRING[1]);
 
     }
 
-    private List<String> list = new ArrayList<String>();
-    private StringBuffer stringBuffer = new StringBuffer();
-    private Integer sum1 = 0;
-    private Double sum2 = 0.0;
+    protected List<String> list = null;
+    //    private StringBuffer stringBuffer = new StringBuffer();
+    private Integer numInteger = 0;
+    private Double nunDouble = 0.0;
 
     @Override
     public List<String> getListRun() {
-        list.add(super.getName());
-        return list;
+        this.list = new ArrayList<String>();
+        this.list.add(super.getName());
+        return this.list;
 
     }
 
     @Override
     public String getListRun(int x) {
+        StringBuffer stringBuffer = new StringBuffer();
+
 //        try {
 //            if (x >= 0 && x < 60) {
 //                stringBuffer.append("差");
@@ -66,11 +69,11 @@ class HelloExtends extends HelloAbstract implements HelloInterface<String> {
 
         // 在条件表达式中不允许有赋值操作，同时也不允许出现复杂的逻辑表达式；(如上代码)
         // 解决方案：将复杂的逻辑运算赋值给一个具体有含义的布尔变量；(如下代码)
-
-        boolean worst = (x >= 0 && x < 60);//差
-        boolean secondary = (x >= 60 && x < 75);//中
-        boolean good = (x >= 75 && x < 85);//良
-        boolean excellent = (x >= 85 && x <= 100);//优
+        // 三目运算：表达式?值1:值2 (说明：当条件成立返回值1 否则 返回值2)
+        boolean worst = (x >= 0 && x < 60) ? true : false;//差
+        boolean secondary = (x >= 60 && x < 75) ? true : false;//中
+        boolean good = (x >= 75 && x < 85) ? true : false;//良
+        boolean excellent = (x >= 85 && x <= 100) ? true : false;//优
 
         System.out.println(worst);
         System.out.println(secondary);
@@ -89,12 +92,12 @@ class HelloExtends extends HelloAbstract implements HelloInterface<String> {
 
             }
 
-            if (good == true) {
+            if (good != false) {
                 stringBuffer.append(HelloEnum.良.getEnumName());
 
             }
 
-            if (excellent == true) {
+            if (excellent != false) {
                 stringBuffer.append(HelloEnum.优.getEnumName());
 
             }
@@ -109,15 +112,15 @@ class HelloExtends extends HelloAbstract implements HelloInterface<String> {
 
     @Override
     public String getListRun(int x, int y) {
-        sum1 = x + y;
-        return String.valueOf((int) sum1);
+        this.numInteger = x + y;
+        return String.valueOf((int) this.numInteger);
 
     }
 
     @Override
     public String getListRun(double a, double b, double c) {
-        sum2 = a + b - c;
-        return String.valueOf((double) sum2);
+        this.nunDouble = a + b - c;
+        return String.valueOf((double) this.nunDouble);
 
     }
 
@@ -129,7 +132,7 @@ class HelloRunnable extends HelloExtends implements Runnable {
         super(name);
 
         try {
-            HelloAbstract.getGzRun(HelloInterface.STRING[0] + "4");
+            HelloAbstract.setGzRun(HelloInterface.STRING[0] + "4");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -137,13 +140,11 @@ class HelloRunnable extends HelloExtends implements Runnable {
         }
     }
 
-    private List<String> list = new ArrayList<String>();
-    private Iterator<String> iterator = null;
-
     @Override
     public void getAbstractRun() throws Exception {
-        list.addAll(super.getListRun());
-        iterator = list.iterator();
+        super.list = new ArrayList<String>();
+        super.list.addAll(super.getListRun());
+        Iterator<String> iterator = super.list.iterator();
         while (iterator.hasNext()) {
             String str = iterator.next();
             System.out.println(str);
