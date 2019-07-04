@@ -194,40 +194,53 @@ public class HelloWord {
         public void run() {
             try {
 
-                myClass = (Class<Object>) Class.forName("src.helloword.HelloRunnable");
-                myConstructor = (Constructor<Object>) myClass.getConstructor(String.class);
+                // 倒计时5秒后执行程序
+                int i = 5;
+                while (i > 0) {
+                    Thread.sleep(1000);
+                    System.out.println("倒计时：" + i);
+                    if (i == 1) {
+                        myClass = (Class<Object>) Class.forName("src.helloword.HelloRunnable");
+                        myConstructor = (Constructor<Object>) myClass.getConstructor(String.class);
 
-                helloRunnable = (HelloRunnable) myConstructor
-                        .newInstance(HelloEnum.Hello.getEnumName() + HelloEnum.Word.getEnumName());
-                helloRunnable.getAbstractRun();
-                new Thread(helloRunnable).start();
+                        helloRunnable = (HelloRunnable) myConstructor
+                                .newInstance(HelloEnum.Hello.getEnumName() + HelloEnum.Word.getEnumName());
+                        helloRunnable.getAbstractRun();
+                        new Thread(helloRunnable).start();
 
-                helloAbstract = (HelloRunnable) myConstructor.newInstance(HelloInterface.STRING[2]);
-                helloAbstract.getNeiBuLeiRun();
-                System.out.println(helloAbstract.getName());
+                        // 抽象类的本身不能进行实例化，而必须通过子类进行实例化。
+                        helloAbstract = new HelloRunnable(HelloInterface.STRING[3]);
+                        helloAbstract.getNeiBuLeiRun();
+                        System.out.println(helloAbstract.getName());
 
 
-//                myClass = (Class<Object>) Class.forName("src.helloary.HelloAry");
-//                myConstructor = (Constructor<Object>) myClass.getConstructor(String.class);
-
-//                helloAry = (HelloAry<String>) myConstructor.newInstance(HelloInterface.STRING[3]);
-//                helloAry.getAryRun();
-
-                // 因为范型类HelloAry的构造函数使用关键字protected定义(非public定义)，所以实现上需要继承调用
-//                helloAry=new HelloAry<String>(HelloInterface.STRING[3]);
-
-//                helloAry = new HelloAry<>(HelloInterface.STRING[3]) {
-//                    public String getAryName() {
-//                        return "你好，世界";
+//                        myClass = (Class<Object>) Class.forName("src.helloary.HelloAry");
+//                        myConstructor = (Constructor<Object>) myClass.getConstructor(String.class);
 //
-//                    }
-//                };
-//                helloAry.getAryRun();
-//                System.out.println(helloAry.getAryName());
+//                        helloAry = (HelloAry<String>) myConstructor.newInstance(HelloInterface.STRING[3]);
+//                        helloAry.getAryRun();
+//
+//                                 因为范型类HelloAry的构造函数使用关键字protected定义(非public定义)，所以实现上需要继承调用
+//                        helloAry=new HelloAry<String>(HelloInterface.STRING[3]);
+//
+//                        helloAry = new HelloAry<>(HelloInterface.STRING[3]) {
+//                            public String getAryName() {
+//                                return "你好，世界";
+//
+//                            }
+//                        };
+//                        helloAry.getAryRun();
+//                        System.out.println(helloAry.getAryName());
 
-                HelloAry.helloAryNeiBu.getAryRun();
+                        HelloAry.helloAryNeiBu.getAryRun();
 
-                timer.cancel();
+                        timer.cancel();
+
+                    }
+
+                    i--;
+                }
+
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -239,7 +252,7 @@ public class HelloWord {
 
     public static void main(String[] args) {
         try {
-            timer.schedule(timerTask, 1000);
+            timer.schedule(timerTask, 1000);// 延迟1秒后执行倒计时
 
         } catch (Exception e) {
             e.printStackTrace();

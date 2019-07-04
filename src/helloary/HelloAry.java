@@ -7,7 +7,7 @@ import src.hellointerface.HelloInterface;
 // 使用final关键字定义的类，说明该类不能被继承。
 //public final class HelloAry<T extends String> {
 
-public class HelloAry<T extends String> {
+public class HelloAry<T> {
 
     private T ary = null;
 
@@ -72,6 +72,21 @@ public class HelloAry<T extends String> {
     //    private static HelloAry<String> helloAry = new HelloAry<String>(HelloInterface.STRING[2]);
     public static HelloAry<String>.HelloAryNeiBu helloAryNeiBu =
             new HelloAry<String>(HelloInterface.STRING[2]).new HelloAryNeiBu();
+
+    //创建一个范型数组
+    public static <T> T[] cerateArray(T[] args,int size)  {
+        args=(T[]) new String[size];
+        return args;
+
+    }
+
+    public static void main(String[] args){
+        String[] strName=null;
+        String[] strName1= HelloAry.cerateArray(strName,3);
+        strName1[1]="HelloWorld";
+        System.out.println(strName1[1]);
+
+    }
 
 
 }
