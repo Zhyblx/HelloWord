@@ -48,7 +48,8 @@ public abstract class HelloAbstract {
 //        Constructor<Object> myClassConstructor = (Constructor<Object>) myClass.getConstructor(String.class);
 //        HelloAbstract.NeiBuLei neiBuLei = (HelloAbstract.NeiBuLei) myClassConstructor.newInstance(HelloInterface.STRING[4]);
 //        neiBuLei.getNeiBuLei();
-//
+
+        // 对抽象类进行 new 实例化相当于一个匿名类继承了这个抽象类；所以，要覆写抽象类中的抽象方法
         HelloNeiBu helloNeiBu = new HelloNeiBu(HelloInterface.STRING[4]) {
             @Override
             public String getNeiBuLei() {
