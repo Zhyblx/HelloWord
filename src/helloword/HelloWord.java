@@ -154,8 +154,8 @@ class HelloRunnable extends HelloExtends implements Runnable {
 
     @Override
     public void run() {
+        System.out.println("Runnable线程：" + Thread.currentThread().getName());
         try {
-
             int intx = (int) (Math.random() * 100);
 
             System.out.println("随机数是:" + intx);
@@ -188,30 +188,23 @@ public class HelloWord {
     private static HelloRunnable helloRunnable = null;
     private static HelloAbstract helloAbstract = null;
 
-    private static Timer timer = new Timer();
-    private static TimerTask timerTask = new TimerTask() {
+    private static Thread thread = new Thread() {
         @Override
         public void run() {
+            System.out.println("thread线程：" + Thread.currentThread().getName());
             try {
+                myClass = (Class<Object>) Class.forName("src.helloword.HelloRunnable");
+                myConstructor = (Constructor<Object>) myClass.getConstructor(String.class);
 
-                // 倒计时5秒后执行程序
-                int i = 5;
-                while (i > 0) {
-                    Thread.sleep(1000);
-                    System.out.println("倒计时：" + i);
-                    if (i == 1) {
-                        myClass = (Class<Object>) Class.forName("src.helloword.HelloRunnable");
-                        myConstructor = (Constructor<Object>) myClass.getConstructor(String.class);
+                helloRunnable = (HelloRunnable) myConstructor
+                        .newInstance(HelloEnum.Hello.getEnumName() + HelloEnum.Word.getEnumName());
+                helloRunnable.getAbstractRun();
+                new Thread(helloRunnable).start();
 
-                        helloRunnable = (HelloRunnable) myConstructor
-                                .newInstance(HelloEnum.Hello.getEnumName() + HelloEnum.Word.getEnumName());
-                        helloRunnable.getAbstractRun();
-                        new Thread(helloRunnable).start();
-
-                        // 抽象类的本身不能进行实例化，而必须通过子类进行实例化。
-                        helloAbstract = new HelloRunnable(HelloInterface.STRING[3]);
-                        helloAbstract.getNeiBuLeiRun();
-                        System.out.println(helloAbstract.getName());
+                // 抽象类的本身不能进行实例化，而必须通过子类进行实例化。
+                helloAbstract = new HelloRunnable(HelloInterface.STRING[3]);
+                helloAbstract.getNeiBuLeiRun();
+                System.out.println(helloAbstract.getName());
 
 
 //                        myClass = (Class<Object>) Class.forName("src.helloary.HelloAry");
@@ -232,15 +225,7 @@ public class HelloWord {
 //                        helloAry.getAryRun();
 //                        System.out.println(helloAry.getAryName());
 
-                        HelloAry.helloAryNeiBu.getAryRun();
-
-                        timer.cancel();
-
-                    }
-
-                    i--;
-                }
-
+                HelloAry.helloAryNeiBu.getAryRun();
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -250,17 +235,42 @@ public class HelloWord {
     };
 
 
-    public static void main(String[] args) {
-        try {
-            timer.schedule(timerTask, 1000);// 延迟1秒后执行倒计时
+    private static Timer timer = new Timer();
+    private static TimerTask timerTask = new TimerTask() {
+        @Override
+        public void run() {
+            System.out.println("timer线程：" + Thread.currentThread().getName());
+            try {
+                int i = 5;
+                while (true) {
+                    try {
+                        Thread.sleep(1000);
 
-        } catch (Exception e) {
-            e.printStackTrace();
+                    } catch (Exception e) {
+                        e.printStackTrace();
 
+                    }
+                    if (i == 0) {
+                        HelloWord.thread.start();
+                        timer.cancel();
+                        break;
+
+                    }
+
+                    System.out.println("sleep:" + i);
+                    i--;
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+
+            }
         }
+    };
+
+
+    public static void main(String[] args) throws Exception {
+        System.out.println("main线程：" + Thread.currentThread().getName());
+        timer.schedule(timerTask, 1000);
 
     }
-
-
 }
-
