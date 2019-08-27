@@ -144,6 +144,9 @@ class HelloRunnable extends HelloExtends implements Runnable {
     public void getAbstractRun() throws Exception {
         super.list = new ArrayList<String>();
         super.list.addAll(super.getListRun());
+
+        super.list.forEach(System.out::println);// 迭代器的另一种输出方式【在遍历数组、集合方面，foreach为开发人员提供了极大的方便。】
+
         Iterator<String> iterator = super.list.iterator();
         while (iterator.hasNext()) {
             String str = iterator.next();
@@ -268,9 +271,24 @@ public class HelloWord {
     };
 
 
+    /*
+     * 递归计算：是指程序调用自身的编程技巧
+     */
+    public static int getsum(int n) {
+        if (n == 1) {
+            //满足条件,递归结束
+            return 1;
+        }
+        int temp = getsum(n - 1);// 这就是"递归"
+        System.out.println(n);
+        System.out.println(temp);
+        return temp + n;
+    }
+
     public static void main(String[] args) throws Exception {
         System.out.println("main线程：" + Thread.currentThread().getName());
-        timer.schedule(timerTask, 1000);
+//        timer.schedule(timerTask, 1000);
+        System.out.println(HelloWord.getsum(4));
 
     }
 }

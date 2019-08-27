@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92b05deb-64b1-44eb-b767-23b276a06f4f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/markdown-navigator/profiles_settings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HelloWord/.idea/markdown-navigator/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HelloWord/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HelloWord/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HelloWord/src/helloabstract/HelloAbstract$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HelloWord/src/helloabstract/HelloAbstract$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HelloWord/src/helloabstract/HelloAbstract.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HelloWord/src/helloabstract/HelloAbstract.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HelloWord/src/helloword/HelloWord$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HelloWord/src/helloword/HelloWord$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HelloWord/src/helloword/HelloWord.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HelloWord/src/helloword/HelloWord.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/helloword/HelloWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/helloword/HelloWord.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,20 +27,8 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>ary</find>
-      <find>HelloLog</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="20" />
-    <option name="y" value="32" />
-    <option name="width" value="1440" />
-    <option name="height" value="803" />
   </component>
   <component name="ProjectId" id="1PJeta5r6NFZyfhGRPgHSbp28Yl" />
   <component name="PropertiesComponent">
@@ -136,7 +118,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

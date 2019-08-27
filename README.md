@@ -194,5 +194,21 @@ private修饰符来修饰的函数，就具有更少的权限了，只能被自�
 
 
 
+#### 学习补充：
 
+1.集合的另一种遍历方式；如【super.list.forEach(System.out::println)】；与使用迭代遍历数组的方式相同。
+【Iterator<String> iterator = super.list.iterator();】 等价于 【super.list.forEach(System.out::println)】
 
+2.递归计算：是指程序调用自身的编程技巧；如下示例：
+
+    public static int getsum(int n) {
+        if (n == 1) {
+            //满足条件,递归结束
+            return 1;
+        }
+        int temp = getsum(n - 1);// 这就是"递归"
+        System.out.println(n);
+        System.out.println(temp);
+        return temp + n;
+    }
+    
