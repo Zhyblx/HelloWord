@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="92b05deb-64b1-44eb-b767-23b276a06f4f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helloword/HelloWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/helloword/HelloWord.java" afterDir="false" />
-    </list>
+    <list default="true" id="92b05deb-64b1-44eb-b767-23b276a06f4f" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +48,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.HelloWord">
+  <component name="RunManager" selected="应用程序.HelloWord">
     <configuration name="HelloAry" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="src.helloary.HelloAry" />
       <module name="HelloWord" />
@@ -94,9 +90,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.HelloWord" />
-        <item itemvalue="Application.HelloAry" />
-        <item itemvalue="Application.HelloLog" />
+        <item itemvalue="应用程序.HelloWord" />
       </list>
     </recent_temporary>
   </component>

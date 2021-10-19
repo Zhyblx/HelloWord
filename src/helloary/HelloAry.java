@@ -53,7 +53,7 @@ public class HelloAry<T> {
     private HelloAry(T ary) {
         this.setAry(ary);
         try {
-            HelloAbstract.setGzRun(HelloInterface.STRING[0] + "2");
+            HelloAbstract.setGzRun(HelloInterface.STRINGS[0] + "2");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -61,6 +61,8 @@ public class HelloAry<T> {
         }
     }
 
+    // 内部类有三种：成员内部类、静态内部类、匿名内部类
+    // 下述为成员内部类
     public class HelloAryNeiBu {
         public void getAryRun() throws Exception {
             System.out.println(getAry());
@@ -71,24 +73,22 @@ public class HelloAry<T> {
 
     //    private static HelloAry<String> helloAry = new HelloAry<String>(HelloInterface.STRING[2]);
     public static HelloAry<String>.HelloAryNeiBu helloAryNeiBu =
-            new HelloAry<String>(HelloInterface.STRING[2]).new HelloAryNeiBu();
+            new HelloAry<String>(HelloInterface.STRINGS[2]).new HelloAryNeiBu();
 
     //创建一个范型数组
-    public static <T> T[] cerateArray(T[] args,int size)  {
-        args=(T[]) new String[size];
+    public static <T> T[] cerateArray(T[] args, int size) {
+        args = (T[]) new String[size];
         return args;
 
     }
 
-    public static void main(String[] args){
-        String[] strName=null;
-        String[] strName1= HelloAry.cerateArray(strName,3);
-        strName1[1]="HelloWorld";
+    public static void main(String[] args) {
+        String[] strName = null;
+        String[] strName1 = HelloAry.cerateArray(strName, 3);
+        strName1[1] = "HelloWorld";
         System.out.println(strName1[1]);
 
     }
-
-
 }
 
 

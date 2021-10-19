@@ -1,18 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="92b05deb-64b1-44eb-b767-23b276a06f4f" name="Default Changelist" comment="">
+    <list default="true" id="92b05deb-64b1-44eb-b767-23b276a06f4f" name="Default Changelist" comment="Default Changelist">
+      <change afterPath="$PROJECT_DIR$/src/helloworld/HelloWorld.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HelloWord/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HelloWord/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/HelloWord/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HelloWord/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HelloWord/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HelloWord/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HelloWord/src/helloword/HelloRunnable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HelloWord/src/helloword/HelloRunnable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HelloWord/src/helloword/HelloWord$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HelloWord/src/helloword/HelloWord$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HelloWord/src/helloword/HelloWord$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HelloWord/src/helloword/HelloWord$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HelloWord/src/helloword/HelloWord.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HelloWord/src/helloword/HelloWord.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helloword/HelloWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/helloword/HelloWord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HelloWord/src/helloabstract/HelloAbstract$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HelloWord/src/helloabstract/HelloAbstract$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HelloWord/src/helloabstract/HelloAbstract$HelloNeiBu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HelloWord/src/helloabstract/HelloAbstract$HelloNeiBu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HelloWord/src/helloabstract/HelloAbstract.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HelloWord/src/helloabstract/HelloAbstract.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HelloWord/src/helloary/HelloAry$HelloAryNeiBu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HelloWord/src/helloary/HelloAry$HelloAryNeiBu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HelloWord/src/helloary/HelloAry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HelloWord/src/helloary/HelloAry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HelloWord/src/hellointerface/HelloInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HelloWord/src/hellointerface/HelloInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HelloWord/src/hellolog/HelloLog.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HelloWord/src/hellolog/HelloLog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HelloWord/src/helloword/HelloExtends.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HelloWord/src/helloword/HelloRunnable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HelloWord/src/helloword/HelloWord$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HelloWord/src/helloword/HelloWord$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HelloWord/src/helloword/HelloWord.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helloabstract/HelloAbstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/helloabstract/HelloAbstract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helloary/HelloAry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/helloary/HelloAry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hellointerface/HelloInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hellointerface/HelloInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hellolog/HelloLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hellolog/HelloLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helloword/HelloWord.java" beforeDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,6 +50,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1PJeta5r6NFZyfhGRPgHSbp28Yl" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548570320574" />
@@ -46,19 +63,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Application.HelloWord">
+  <component name="RunManager" selected="应用程序.HelloWorld">
     <configuration name="HelloAry" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="src.helloary.HelloAry" />
       <module name="HelloWord" />
@@ -90,7 +95,20 @@
       <module name="HelloWord" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="src.helloword.*" />
+          <option name="PATTERN" value="src.helloworld.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HelloWorld" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="src.helloworld.HelloWorld" />
+      <module name="HelloWord" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="src.helloworld.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -100,12 +118,13 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.HelloWord" />
-        <item itemvalue="Application.HelloAry" />
-        <item itemvalue="Application.HelloLog" />
+        <item itemvalue="应用程序.HelloWorld" />
+        <item itemvalue="应用程序.HelloLog" />
+        <item itemvalue="应用程序.HelloWord" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -124,13 +143,12 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="masterDetails">
     <states>
